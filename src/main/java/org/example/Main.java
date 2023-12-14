@@ -26,6 +26,7 @@ public class Main {
                 case 3 -> updateQueries();
                 case 4 -> deleteQueries();
                 case 5 -> printChoices();
+                case 6 -> statsQueries();
             }
         } while (true);
 
@@ -42,6 +43,29 @@ public class Main {
         return choice;
     }
 
+    private static void statsQueries() {
+        System.out.println("""
+                --Statistics--
+                1.Courses
+                2.TBD
+                3.TBD
+                4.TBD
+                5.TBD
+                6.TBD
+                \nAwaiting input
+                """);
+        int choice = getChoice();
+        switch (choice) {
+            default -> System.out.println("Incorrect choice, returning to menu");
+            case 1 -> LanguageCourseQueries.statsCourseQueries();
+            case 2 -> /*Todo: MenuOption2 for select*/{}
+            case 3 -> /*Todo: MenuOption3 for select*/{}
+            case 4 -> /*Todo: MenuOption4 for select*/{}
+            case 5 -> /*Todo: MenuOption5 for select*/{}
+            case 6 -> /*Todo: MenuOption6 for select*/{}
+        }
+    }
+
     private static void selectQueries() {
         System.out.println("""
                 --Show--
@@ -56,7 +80,7 @@ public class Main {
         int choice = getChoice();
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
-            case 1 -> CourseQueries.selectCourseQueries();
+            case 1 -> LanguageCourseQueries.selectCourseQueries();
             case 2 -> /*Todo: MenuOption2 for select*/{}
             case 3 -> /*Todo: MenuOption3 for select*/{}
             case 4 -> /*Todo: MenuOption4 for select*/{}
@@ -67,7 +91,7 @@ public class Main {
     private static void insertQueries() {
         System.out.println("""
                 --Add--
-                1.TBD
+                1.Courses
                 2.TBD
                 3.TBD
                 4.TBD
@@ -78,7 +102,7 @@ public class Main {
         int choice = getChoice();
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
-            case 1 -> /*Todo: MenuOption1 for insert*/{}
+            case 1 -> LanguageCourseQueries.insertCourseQueries();
             case 2 -> /*Todo: MenuOption2 for insert*/{}
             case 3 -> /*Todo: MenuOption3 for insert*/{}
             case 4 -> /*Todo: MenuOption4 for insert*/{}
@@ -90,7 +114,7 @@ public class Main {
     private static void updateQueries() {
         System.out.println("""
                 --Update--
-                1.TBD
+                1.Courses
                 2.TBD
                 3.TBD
                 4.TBD
@@ -101,7 +125,7 @@ public class Main {
         int choice = getChoice();
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
-            case 1 -> /*Todo: MenuOption1 for update*/{}
+            case 1 -> LanguageCourseQueries.updateCourseQueries();
             case 2 -> /*Todo: MenuOption2 for update*/{}
             case 3 -> /*Todo: MenuOption3 for update*/{}
             case 4 -> /*Todo: MenuOption4 for update*/{}
@@ -113,7 +137,7 @@ public class Main {
     private static void deleteQueries() {
         System.out.println("""
                 --Delete--
-                1.TBD
+                1.Courses
                 2.TBD
                 3.TBD
                 4.TBD
@@ -124,7 +148,7 @@ public class Main {
         int choice = getChoice();
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
-            case 1 -> /*Todo: MenuOption1 for delete*/{}
+            case 1 -> LanguageCourseQueries.deleteCourseQueries();
             case 2 -> /*Todo: MenuOption2 for delete*/{}
             case 3 -> /*Todo: MenuOption3 for delete*/{}
             case 4 -> /*Todo: MenuOption4 for delete*/{}
@@ -140,7 +164,8 @@ public class Main {
                 2 - Add
                 3 - Update
                 4 - Delete
-                5 - Print choices""");
+                5 - Print choices
+                6 - Statistics""");
     }
 
     public static void inTransaction(Consumer<EntityManager> work) {

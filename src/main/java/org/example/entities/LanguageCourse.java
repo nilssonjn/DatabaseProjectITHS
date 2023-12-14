@@ -1,8 +1,11 @@
 package org.example.entities;
 
 import jakarta.persistence.*;
+import org.hibernate.proxy.HibernateProxy;
 
+import java.lang.reflect.Member;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -110,4 +113,53 @@ public class LanguageCourse {
         this.courseLeaders = courseLeaders;
     }
 
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
+        Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
+        if (thisEffectiveClass != oEffectiveClass) return false;
+        LanguageCourse that = (LanguageCourse) o;
+        return getId() != null && Objects.equals(getId(), that.getId());
+    }
+
+    @Override
+    public final int hashCode() {
+        return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "id = " + id + ", " +
+                "courseName = " + courseName + ", " +
+                "courseStartDate = " + courseStartDate + ", " +
+                "courseEndDate = " + courseEndDate + ")";
+    }
+
+    public void addTeacher(Teacher teacher) {
+        this.teachers.add(teacher);
+    }
+    public void removeTeacher(Teacher teacher) {
+        this.teachers.remove(teacher);
+    }
+    public void addCourseLeader(CourseLeader courseLeader) {
+        this.courseLeaders.add(courseLeader);
+    }
+    public void removeCourseLeader(CourseLeader courseLeader) {
+        this.courseLeaders.remove(courseLeader);
+    }
+    public void addStudent(Student student) {
+        this.students.add(student);
+    }
+    public void removeStudent(Student student) {
+        this.students.remove(student);
+    }
+    public void addExamination(Examination examination) {
+        this.examinations.add(examination);
+    }
+    public void removeExamination(Examination examination) {
+        this.examinations.remove(examination);
+    }
 }

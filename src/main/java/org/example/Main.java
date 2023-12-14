@@ -31,7 +31,7 @@ public class Main {
 
     }
 
-    private static int getChoice() {
+    public static int getChoice() {
         int choice;
         try {
             choice = Integer.parseInt(scanner.nextLine());
@@ -45,7 +45,7 @@ public class Main {
     private static void selectQueries() {
         System.out.println("""
                 --Show--
-                1.TBD
+                1.Courses
                 2.TBD
                 3.TBD
                 4.TBD
@@ -56,7 +56,7 @@ public class Main {
         int choice = getChoice();
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
-            case 1 -> /*Todo: MenuOption1 for select*/{}
+            case 1 -> CourseQueries.selectCourseQueries();
             case 2 -> /*Todo: MenuOption2 for select*/{}
             case 3 -> /*Todo: MenuOption3 for select*/{}
             case 4 -> /*Todo: MenuOption4 for select*/{}
@@ -64,7 +64,6 @@ public class Main {
             case 6 -> /*Todo: MenuOption6 for select*/{}
         }
     }
-
     private static void insertQueries() {
         System.out.println("""
                 --Add--
@@ -144,7 +143,7 @@ public class Main {
                 5 - Print choices""");
     }
 
-    static void inTransaction(Consumer<EntityManager> work) {
+    public static void inTransaction(Consumer<EntityManager> work) {
         try (EntityManager entityManager = JPAUtil.getEntityManager()) {
             EntityTransaction transaction = entityManager.getTransaction();
             try {

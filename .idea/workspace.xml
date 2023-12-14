@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="Menu added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/CourseLeader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/LanguageCourse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/School.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="Added entities">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CourseQueries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Examination.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/LanguageCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/LanguageCourse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +26,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Win-ther"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="17f42ba5-0f37-48d1-9fe7-6d22fe85e2f5" />
+        <option name="url" value="https://github.com/Win-ther/DatabaseProject.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -68,6 +79,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\emilw\Desktop\DATABAS KURS\Projekt\DatabaseProject\src\main\resources" />
     </key>
@@ -111,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702475478890</updated>
       <workItem from="1702475480177" duration="3132000" />
-      <workItem from="1702539473284" duration="1406000" />
+      <workItem from="1702539473284" duration="5537000" />
     </task>
     <task id="LOCAL−00001" summary="Menu added">
       <option name="closed" value="true" />
@@ -120,7 +134,14 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1702478606904</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Added entities">
+      <option name="closed" value="true" />
+      <created>1702544213197</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1702544213198</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +149,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Menu added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu added" />
+    <MESSAGE value="Added entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added entities" />
   </component>
 </project>

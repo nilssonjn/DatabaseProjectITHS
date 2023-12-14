@@ -41,11 +41,22 @@ CREATE TABLE courseLeader (
     PRIMARY KEY (courseLeaderId),
     FOREIGN KEY (courseLeaderCourseId) REFERENCES LanguageCourse(courseId)
 );
+CREATE TABLE Examination (
+    examinationId INT NOT NULL AUTO_INCREMENT,
+    examinationName VARCHAR(50),
+    examinationMinScore INT,
+    examinationMaxScore INT,
+    examinationCourseId INT,
+    PRIMARY KEY (examinationId),
+    FOREIGN KEY (examinationCourseId) REFERENCES LanguageCourse(courseId),
+    CHECK ( examinationMaxScore > examinationMinScore )
+);
 -- Skapa unika index
 CREATE UNIQUE INDEX index_school_name ON School(schoolName);
 CREATE UNIQUE INDEX index_student_email ON Student(studentEmail);
 CREATE UNIQUE INDEX index_teacher_email ON Teacher(teacherEmail);
 CREATE UNIQUE INDEX index_courseleader_email ON courseLeader(courseLeaderEmail);
+CREATE UNIQUE INDEX index_examination_name ON Examination(examinationName);
 
 -- Insert data
 INSERT INTO School (schoolName) VALUES ('ITHS'),('Montessori'),('Chalmers');
@@ -66,6 +77,10 @@ INSERT INTO courseLeader (courseLeaderName, courseLeaderEmail, courseLeaderCours
 VALUES ('Daniella Persson','daniellapersson@iths.se',1),
        ('Cornelia Karlsson','cornelia@montessori.com',2),
        ('Jane Smith','janesmith@chalmers.se',3);
+INSERT INTO Examination (examinationName, examinationMinScore, examinationMaxScore, examinationCourseId)
+VALUES ('Tentamen Engelska 2024Höst', 50, 100,1),
+       ('Tentamen Italienska 2024Vår', 30,60,2),
+       ('Tentamen Spanska 2024Sommar', 75, 120,3);
 
 -- Select frågor
 SELECT * FROM LanguageCourse;
@@ -73,6 +88,7 @@ SELECT * FROM Student;
 SELECT * FROM courseLeader;
 SELECT * FROM Teacher;
 SELECT * FROM School;
+SELECT * FROM Examination;
 -- Lägga till
 INSERT INTO Student (studentName, studentEmail, studentCourseId) VALUES ('John Doe', 'johndoe@gmail.com',1);
 -- Uppdatera
@@ -85,4 +101,4 @@ SELECT COUNT(Student.studentId) FROM Student
 INNER JOIN LanguageCourse ON Student.studentCourseId = LanguageCourse.courseId
 WHERE courseName = 'English';
 -- Delete tabeller
-drop table School, LanguageCourse,courseLeader,Student,Teacher;
+drop table School, LanguageCourse,courseLeader,Student,Teacher, Examination;

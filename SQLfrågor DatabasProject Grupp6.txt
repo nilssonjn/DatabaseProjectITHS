@@ -1,0 +1,88 @@
+CREATE DATABASE languageCourseDatabase;
+-- Skapa tabeller
+CREATE TABLE School
+(
+    schoolId   INT NOT NULL AUTO_INCREMENT,
+    schoolName VARCHAR(50),
+    PRIMARY KEY (schoolId)
+);
+CREATE TABLE LanguageCourse(
+    courseId INT NOT NULL AUTO_INCREMENT,
+    courseName VARCHAR(50),
+    courseStartDate VARCHAR(50),
+    courseEndDate VARCHAR(50),
+    courseSchoolId INT,
+    PRIMARY KEY (courseId),
+    FOREIGN KEY (courseSchoolId) REFERENCES School(schoolId)
+);
+CREATE TABLE Teacher
+(
+    teacherId   INT NOT NULL AUTO_INCREMENT,
+    teacherName VARCHAR(50),
+    teacherEmail VARCHAR(50),
+    teacherCourseId INT,
+    PRIMARY KEY (teacherId),
+    FOREIGN KEY (teacherCourseId) REFERENCES LanguageCourse(courseId)
+);
+CREATE TABLE Student
+(
+    studentId      INT NOT NULL AUTO_INCREMENT,
+    studentName    VARCHAR(50),
+    studentEmail VARCHAR(50),
+    studentCourseId INT,
+    PRIMARY KEY (studentId),
+    FOREIGN KEY (studentCourseId) REFERENCES LanguageCourse (courseId)
+);
+CREATE TABLE courseLeader (
+    courseLeaderId INT NOT NULL AUTO_INCREMENT,
+    courseLeaderName VARCHAR(50),
+    courseLeaderEmail VARCHAR(50),
+    courseLeaderCourseId INT,
+    PRIMARY KEY (courseLeaderId),
+    FOREIGN KEY (courseLeaderCourseId) REFERENCES LanguageCourse(courseId)
+);
+-- Skapa unika index
+CREATE UNIQUE INDEX index_school_name ON School(schoolName);
+CREATE UNIQUE INDEX index_student_email ON Student(studentEmail);
+CREATE UNIQUE INDEX index_teacher_email ON Teacher(teacherEmail);
+CREATE UNIQUE INDEX index_courseleader_email ON courseLeader(courseLeaderEmail);
+
+-- Insert data
+INSERT INTO School (schoolName) VALUES ('ITHS'),('Montessori'),('Chalmers');
+INSERT INTO LanguageCourse (courseName, courseStartDate, courseEndDate, courseSchoolId)
+VALUES ('English','2024-01-01','2025-01-01',1),
+       ('Italian','2023-12-26','2024-06-25',2),
+       ('Spanish','2024-03-25','2024-08-08',3);
+INSERT INTO Teacher (teacherName, teacherEmail, teacherCourseId)
+VALUES ('Roger Pontare', 'pontare@gmail.com',1),
+       ('Marco Pirelli','marcopirelli@gmail.com',2),
+       ('José Gonzales', 'josespanish@hotmail.com',3);
+INSERT INTO Student (studentName, studentEmail, studentCourseId)
+VALUES ('Jonas Jonasson','jonasjonas@gmail.com',1),
+       ('Andrea Stensson','sten@gmail.com',2),
+       ('Jeff Dunham','jeffdunham@comhem.se',3),
+       ('Sten Andersson','stenandersson@gmail.com',1);
+INSERT INTO courseLeader (courseLeaderName, courseLeaderEmail, courseLeaderCourseId)
+VALUES ('Daniella Persson','daniellapersson@iths.se',1),
+       ('Cornelia Karlsson','cornelia@montessori.com',2),
+       ('Jane Smith','janesmith@chalmers.se',3);
+
+-- Select frågor
+SELECT * FROM LanguageCourse;
+SELECT * FROM Student;
+SELECT * FROM courseLeader;
+SELECT * FROM Teacher;
+SELECT * FROM School;
+-- Lägga till
+INSERT INTO Student (studentName, studentEmail, studentCourseId) VALUES ('John Doe', 'johndoe@gmail.com',1);
+-- Uppdatera
+UPDATE School
+SET schoolName = 'ITHS Göteborg' WHERE schoolName = 'ITHS';
+-- Ta bort
+DELETE FROM Student WHERE studentName = 'John Doe';
+-- Statistik
+SELECT COUNT(Student.studentId) FROM Student
+INNER JOIN LanguageCourse ON Student.studentCourseId = LanguageCourse.courseId
+WHERE courseName = 'English';
+-- Delete tabeller
+drop table School, LanguageCourse,courseLeader,Student,Teacher;

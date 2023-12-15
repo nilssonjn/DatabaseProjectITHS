@@ -37,8 +37,8 @@ public class Main {
         try {
             choice = Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("\nIncorrect input, try again");
-            choice = 100;
+            System.out.println("\nIncorrect input");
+            choice = -1;
         }
         return choice;
     }

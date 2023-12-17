@@ -131,11 +131,7 @@ public class LanguageCourse {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "id = " + id + ", " +
-                "courseName = " + courseName + ", " +
-                "courseStartDate = " + courseStartDate + ", " +
-                "courseEndDate = " + courseEndDate + ")";
+        return "ID: "+ id+" Course: "+courseName+" Start date: "+courseStartDate+" End date: "+courseEndDate;
     }
 
     public void addTeacher(Teacher teacher) {

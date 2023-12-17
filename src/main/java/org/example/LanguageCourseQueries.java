@@ -2,10 +2,13 @@ package org.example;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
+import org.example.entities.CourseLeader;
 import org.example.entities.LanguageCourse;
 import org.example.entities.School;
+import org.example.entities.Teacher;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.example.Main.getChoice;
 import static org.example.Main.inTransaction;
@@ -183,8 +186,7 @@ public class LanguageCourseQueries {
 
         inTransaction(entityManager -> {
             LanguageCourse course = getCourseByName(entityManager, name);
-            if (course == null) return;
-            System.out.println(course);
+            if (course != null) System.out.println(course + " School: "+(course.getCourseSchool() != null ? course.getCourseSchool().getSchoolName() : "None"));
         });
     }
 
@@ -211,7 +213,7 @@ public class LanguageCourseQueries {
                     """;
             var query = entityManager.createQuery(queryString, LanguageCourse.class);
             List<LanguageCourse> courses = query.getResultList();
-            courses.stream().map(course -> course.toString() +" - "+ course.getTeachers() +" - "+ course.getCourseLeaders()).forEach(System.out::println);
+            courses.stream().map(course -> course.toString() +" - Teacher: "+ course.getTeachers().stream().map(Teacher::getTeacherName).collect(Collectors.toSet())+" - Course leader: "+ course.getCourseLeaders().stream().map(CourseLeader::getCourseLeaderName).collect(Collectors.toSet())).forEach(System.out::println);
         });
     }
 
@@ -222,7 +224,7 @@ public class LanguageCourseQueries {
                     """;
             var query = entityManager.createQuery(queryString, LanguageCourse.class);
             List<LanguageCourse> courses = query.getResultList();
-            courses.forEach(System.out::println);
+            courses.stream().map(c -> c.toString()+" School: "+(c.getCourseSchool() != null ? c.getCourseSchool().getSchoolName() : "None")).forEach(System.out::println);
         });
     }
 }

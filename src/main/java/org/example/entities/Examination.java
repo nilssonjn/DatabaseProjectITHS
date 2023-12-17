@@ -62,5 +62,9 @@ public class Examination {
     public void setExaminationCourse(LanguageCourse examinationCourse) {
         this.examinationCourse = examinationCourse;
     }
+    @Override
+    public String toString() {
+        return "ID: "+ id+" Examination: "+examinationName+" Min score: "+examinationMinScore + " Max score: "+examinationMaxScore;
+    }
 
 }

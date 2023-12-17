@@ -47,7 +47,7 @@ public class Main {
         System.out.println("""
                 --Statistics--
                 1.Courses
-                2.TBD
+                2.Students
                 3.TBD
                 4.TBD
                 5.TBD
@@ -58,7 +58,7 @@ public class Main {
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
             case 1 -> LanguageCourseQueries.statsCourseQueries();
-            case 2 -> /*Todo: MenuOption2 for select*/{}
+            case 2 -> StudentQueries.statsStudentQueries();
             case 3 -> /*Todo: MenuOption3 for select*/{}
             case 4 -> /*Todo: MenuOption4 for select*/{}
             case 5 -> /*Todo: MenuOption5 for select*/{}
@@ -70,7 +70,7 @@ public class Main {
         System.out.println("""
                 --Show--
                 1.Courses
-                2.TBD
+                2.Students
                 3.TBD
                 4.TBD
                 5.TBD
@@ -81,7 +81,7 @@ public class Main {
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
             case 1 -> LanguageCourseQueries.selectCourseQueries();
-            case 2 -> /*Todo: MenuOption2 for select*/{}
+            case 2 -> StudentQueries.showAllStudents();
             case 3 -> /*Todo: MenuOption3 for select*/{}
             case 4 -> /*Todo: MenuOption4 for select*/{}
             case 5 -> /*Todo: MenuOption5 for select*/{}
@@ -92,7 +92,7 @@ public class Main {
         System.out.println("""
                 --Add--
                 1.Courses
-                2.TBD
+                2.Students
                 3.TBD
                 4.TBD
                 5.TBD
@@ -103,7 +103,7 @@ public class Main {
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
             case 1 -> LanguageCourseQueries.insertCourseQueries();
-            case 2 -> /*Todo: MenuOption2 for insert*/{}
+            case 2 -> StudentQueries.insertStudentQueries();
             case 3 -> /*Todo: MenuOption3 for insert*/{}
             case 4 -> /*Todo: MenuOption4 for insert*/{}
             case 5 -> /*Todo: MenuOption5 for insert*/{}
@@ -115,7 +115,7 @@ public class Main {
         System.out.println("""
                 --Update--
                 1.Courses
-                2.TBD
+                2.Students
                 3.TBD
                 4.TBD
                 5.TBD
@@ -126,7 +126,7 @@ public class Main {
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
             case 1 -> LanguageCourseQueries.updateCourseQueries();
-            case 2 -> /*Todo: MenuOption2 for update*/{}
+            case 2 -> StudentQueries.updateStudentQueries();
             case 3 -> /*Todo: MenuOption3 for update*/{}
             case 4 -> /*Todo: MenuOption4 for update*/{}
             case 5 -> /*Todo: MenuOption5 for update*/{}
@@ -138,7 +138,7 @@ public class Main {
         System.out.println("""
                 --Delete--
                 1.Courses
-                2.TBD
+                2.Students
                 3.TBD
                 4.TBD
                 5.TBD
@@ -149,7 +149,7 @@ public class Main {
         switch (choice) {
             default -> System.out.println("Incorrect choice, returning to menu");
             case 1 -> LanguageCourseQueries.deleteCourseQueries();
-            case 2 -> /*Todo: MenuOption2 for delete*/{}
+            case 2 -> StudentQueries.deleteStudentQueries();
             case 3 -> /*Todo: MenuOption3 for delete*/{}
             case 4 -> /*Todo: MenuOption4 for delete*/{}
             case 5 -> /*Todo: MenuOption5 for delete*/{}

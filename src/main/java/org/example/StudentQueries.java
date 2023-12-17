@@ -19,10 +19,14 @@ public class StudentQueries {
         System.out.println("Enter student email:");
         String email = scanner.nextLine();
         System.out.println("Enter course ID for student:");
-        int courseId = Integer.parseInt(scanner.nextLine());
+        int courseId = getId();
 
         inTransaction(entityManager -> {
             LanguageCourse course = entityManager.find(LanguageCourse.class, courseId);
+            if (course == null) {
+                System.out.println("No course with that Id, returning to menu");
+                return;
+            }
             Student student = new Student();
             student.setStudentName(name);
             student.setStudentEmail(email);
@@ -30,6 +34,9 @@ public class StudentQueries {
             course.addStudent(student);
             entityManager.persist(student);
         });
+    }
+    private static int getId() {
+        return getChoice();
     }
 
     public static void showAllStudents() {
@@ -51,7 +58,11 @@ public class StudentQueries {
 
     public static void updateStudentQueries() {
         System.out.println("Enter ID of student you want to update:");
-        int id = getChoice();
+        int id = getId();
+        if (id == -1) {
+            System.out.println("Returning to menu");
+            return;
+        }
         System.out.println("Enter new name for student:");
         String name = scanner.nextLine();
         System.out.println("Enter new email for student:");
@@ -59,6 +70,10 @@ public class StudentQueries {
 
         inTransaction(entityManager -> {
             Student student = entityManager.find(Student.class, id);
+            if (student == null) {
+                System.out.println("No student with that Id, returning to menu");
+                return;
+            }
             student.setStudentName(name);
             student.setStudentEmail(email);
             entityManager.persist(student);

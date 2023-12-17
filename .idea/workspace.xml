@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="Fixed a couple of crashes when using incorrect input in LanguageCourseQueries.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/StudentQueries.java" afterDir="false" />
+    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="StudentQueries added&#10;&#10;Fixed some toString methods and changed what was printed in LanguageCourse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LanguageCourseQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LanguageCourseQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Examination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Examination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/LanguageCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/LanguageCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StudentQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StudentQueries.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +128,7 @@
       <workItem from="1702475480177" duration="3132000" />
       <workItem from="1702539473284" duration="23148000" />
       <workItem from="1702631480018" duration="3352000" />
-      <workItem from="1702807612401" duration="4947000" />
+      <workItem from="1702807612401" duration="6260000" />
     </task>
     <task id="LOCAL−00001" summary="Menu added">
       <option name="closed" value="true" />
@@ -178,7 +172,14 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1702634739358</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="StudentQueries added&#10;&#10;Fixed some toString methods and changed what was printed in LanguageCourse">
+      <option name="closed" value="true" />
+      <created>1702812767200</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1702812767200</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +192,7 @@
     <MESSAGE value="Updated SQL-database questions" />
     <MESSAGE value="LanguageCourse CRUD pretty much complete.&#10;&#10;Added statistics to menu and added ER-diagram to project" />
     <MESSAGE value="Fixed a couple of crashes when using incorrect input in LanguageCourseQueries.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a couple of crashes when using incorrect input in LanguageCourseQueries.java" />
+    <MESSAGE value="StudentQueries added&#10;&#10;Fixed some toString methods and changed what was printed in LanguageCourse" />
+    <option name="LAST_COMMIT_MESSAGE" value="StudentQueries added&#10;&#10;Fixed some toString methods and changed what was printed in LanguageCourse" />
   </component>
 </project>

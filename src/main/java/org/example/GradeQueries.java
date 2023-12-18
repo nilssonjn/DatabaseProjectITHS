@@ -1,5 +1,6 @@
 package org.example;
 
+import jakarta.persistence.EntityManager;
 import org.example.entities.Grade;
 import org.example.entities.LanguageCourse;
 import org.example.entities.Student;
@@ -45,23 +46,27 @@ public class GradeQueries {
             query.setParameter("courseName", result.courseName());
             List<LanguageCourse> courses = query.getResultList();
 
-            if (!courses.isEmpty()) {
-                String studentQueryString = """
-                        SELECT s FROM Student s
-                        WHERE s.studentName = :studentName
-                        """;
-                var studentQuery = entityManager.createQuery(studentQueryString, Student.class);
-                studentQuery.setParameter("studentName", result.studentName());
-                List<Student> students = studentQuery.getResultList();
-
-                Grade grade = new Grade();
-                grade.setGradeCourse(courses.getFirst());
-                grade.setGradeStudent(students.getFirst());
-                grade.setGradeValue(result.gradeValue());
-                entityManager.persist(grade);
-                System.out.println("Grade added");
-            }
+            setGradeByName(entityManager, courses, result);
         });
+    }
+
+    private static void setGradeByName(EntityManager entityManager, List<LanguageCourse> courses, scannerInputs result) {
+        if (!courses.isEmpty()) {
+            String studentQueryString = """
+                    SELECT s FROM Student s
+                    WHERE s.studentName = :studentName
+                    """;
+            var studentQuery = entityManager.createQuery(studentQueryString, Student.class);
+            studentQuery.setParameter("studentName", result.studentName());
+            List<Student> students = studentQuery.getResultList();
+
+            Grade grade = new Grade();
+            grade.setGradeCourse(courses.getFirst());
+            grade.setGradeStudent(students.getFirst());
+            grade.setGradeValue(result.gradeValue());
+            entityManager.persist(grade);
+            System.out.println("Grade added");
+        }
     }
 
     private static scannerInputs getScannerInputs() {

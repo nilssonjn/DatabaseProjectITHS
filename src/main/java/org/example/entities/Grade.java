@@ -60,14 +60,6 @@ public class Grade {
         this.gradeStudent = gradeStudent;
     }
 
-    public Teacher getGradeTeacher() {
-        return gradeTeacher;
-    }
-
-    public void setGradeTeacher(Teacher gradeTeacher) {
-        this.gradeTeacher = gradeTeacher;
-    }
-
     @Override
     public String toString() {
         return "Grade{" +

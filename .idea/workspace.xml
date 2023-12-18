@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="add class for gradequeries updated grade.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="can add grade to a student by name">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GradeQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GradeQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Grade.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +136,7 @@
       <workItem from="1702807612401" duration="6617000" />
       <workItem from="1702825150590" duration="1426000" />
       <workItem from="1702888667184" duration="8915000" />
-      <workItem from="1702904710031" duration="5214000" />
+      <workItem from="1702904710031" duration="5553000" />
     </task>
     <task id="LOCAL−00001" summary="Menu added">
       <option name="closed" value="true" />
@@ -233,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702906448746</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="can add grade to a student by name">
+      <option name="closed" value="true" />
+      <created>1702909953925</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702909953925</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +270,7 @@
     <MESSAGE value="Add Courseleader and CourseLeaderQueries&#10;&#10;Edited some stuff in TeacherQueries, School, CourseLeaderQueries and LanguageCourseQueries so that the connections between the entities are correct.&#10;&#10;Co-authored-by: Jens (School &amp; SchoolQueries)&#10;Co-authored-by: Lucia (Student &amp; StudentQueries)&#10;Co-authored-by: Valentina (Teacher &amp; TeacherQueries)&#10;Co-authored-by: Adam (CourseLeader &amp; CourseLeaderQueries)" />
     <MESSAGE value="first commit, added grade entity. testing to add consolechoice for adding grades to students" />
     <MESSAGE value="add class for gradequeries updated grade.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="add class for gradequeries updated grade.java" />
+    <MESSAGE value="can add grade to a student by name" />
+    <option name="LAST_COMMIT_MESSAGE" value="can add grade to a student by name" />
   </component>
 </project>

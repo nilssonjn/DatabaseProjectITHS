@@ -46,19 +46,20 @@ public class GradeQueries {
             List<LanguageCourse> courses = query.getResultList();
 
             if (!courses.isEmpty()) {
-                Student student = entityManager.find(Student.class, result.studentName());
-                if (student != null) {
-                    Grade grade = new Grade();
-                    grade.setGradeCourse(courses.getFirst());
-                    grade.setGradeStudent(student);
-                    grade.setGradeValue(result.gradeValue());
-                    entityManager.persist(grade);
-                    System.out.println("Grade added");
-                } else {
-                    System.out.println("Student not found with that name: " + result.studentName());
-                }
-            } else {
-                System.out.println("Course not found with name: " + result.courseName());
+                String studentQueryString = """
+                        SELECT s FROM Student s
+                        WHERE s.studentName = :studentName
+                        """;
+                var studentQuery = entityManager.createQuery(studentQueryString, Student.class);
+                studentQuery.setParameter("studentName", result.studentName());
+                List<Student> students = studentQuery.getResultList();
+
+                Grade grade = new Grade();
+                grade.setGradeCourse(courses.getFirst());
+                grade.setGradeStudent(students.getFirst());
+                grade.setGradeValue(result.gradeValue());
+                entityManager.persist(grade);
+                System.out.println("Grade added");
             }
         });
     }

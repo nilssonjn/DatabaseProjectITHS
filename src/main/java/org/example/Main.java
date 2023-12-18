@@ -97,6 +97,7 @@ public class Main {
                 4.Schools
                 5.Course leader
                 6.TBD
+                7.Add grade
                 \nAwaiting input
                 """);
         int choice = getChoice();
@@ -108,6 +109,7 @@ public class Main {
             case 4 -> SchoolQueries.insertSchoolQueries();
             case 5 -> CourseLeaderQueries.insertLeaderQueries();
             case 6 -> /*Todo: MenuOption6 for insert*/{}
+            case 7 -> GradeQueries.addGradeOptions();
         }
     }
 

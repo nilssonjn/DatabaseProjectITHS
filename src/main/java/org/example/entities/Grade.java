@@ -24,6 +24,18 @@ public class Grade {
     @JoinColumn(name = "gradeTeacherId")
     private Teacher gradeTeacher;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "gradeCourseId")
+    private LanguageCourse gradeCourse;
+
+    public LanguageCourse getGradeCourse() {
+        return gradeCourse;
+    }
+
+    public void setGradeCourse(LanguageCourse gradeCourse) {
+        this.gradeCourse = gradeCourse;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="Add Courseleader and CourseLeaderQueries&#10;&#10;Edited some stuff in TeacherQueries, School, CourseLeaderQueries and LanguageCourseQueries so that the connections between the entities are correct.&#10;&#10;Co-authored-by: Jens (School &amp; SchoolQueries)&#10;Co-authored-by: Lucia (Student &amp; StudentQueries)&#10;Co-authored-by: Valentina (Teacher &amp; TeacherQueries)&#10;Co-authored-by: Adam (CourseLeader &amp; CourseLeaderQueries)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Grade.java" afterDir="false" />
+    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="first commit, added grade entity. testing to add consolechoice for adding grades to students">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GradeQueries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Grade.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +139,7 @@
       <workItem from="1702807612401" duration="6617000" />
       <workItem from="1702825150590" duration="1426000" />
       <workItem from="1702888667184" duration="8915000" />
-      <workItem from="1702904710031" duration="358000" />
+      <workItem from="1702904710031" duration="1632000" />
     </task>
     <task id="LOCAL−00001" summary="Menu added">
       <option name="closed" value="true" />
@@ -215,11 +218,30 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1702899965742</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="first commit, added grade entity. testing to add consolechoice for adding grades to students">
+      <option name="closed" value="true" />
+      <created>1702905303687</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702905303688</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Menu added" />
@@ -233,6 +255,7 @@
     <MESSAGE value="Add Teacher.java to project." />
     <MESSAGE value="Add School.java and SchoolQueries.java to project&#10;&#10;Co-authored-by: Jens (School &amp; SchoolQueries)&#10;Co-authored-by: Lucia (Student &amp; StudentQueries)&#10;Co-authored-by: Valentina (Teacher &amp; TeacherQueries)" />
     <MESSAGE value="Add Courseleader and CourseLeaderQueries&#10;&#10;Edited some stuff in TeacherQueries, School, CourseLeaderQueries and LanguageCourseQueries so that the connections between the entities are correct.&#10;&#10;Co-authored-by: Jens (School &amp; SchoolQueries)&#10;Co-authored-by: Lucia (Student &amp; StudentQueries)&#10;Co-authored-by: Valentina (Teacher &amp; TeacherQueries)&#10;Co-authored-by: Adam (CourseLeader &amp; CourseLeaderQueries)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Courseleader and CourseLeaderQueries&#10;&#10;Edited some stuff in TeacherQueries, School, CourseLeaderQueries and LanguageCourseQueries so that the connections between the entities are correct.&#10;&#10;Co-authored-by: Jens (School &amp; SchoolQueries)&#10;Co-authored-by: Lucia (Student &amp; StudentQueries)&#10;Co-authored-by: Valentina (Teacher &amp; TeacherQueries)&#10;Co-authored-by: Adam (CourseLeader &amp; CourseLeaderQueries)" />
+    <MESSAGE value="first commit, added grade entity. testing to add consolechoice for adding grades to students" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit, added grade entity. testing to add consolechoice for adding grades to students" />
   </component>
 </project>

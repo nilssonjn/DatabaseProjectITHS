@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="can add grade by student name and course name now">
+    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="refactor">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GradeQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GradeQueries.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +136,7 @@
       <workItem from="1702807612401" duration="6617000" />
       <workItem from="1702825150590" duration="1426000" />
       <workItem from="1702888667184" duration="8915000" />
-      <workItem from="1702904710031" duration="5867000" />
+      <workItem from="1702904710031" duration="6348000" />
     </task>
     <task id="LOCAL−00001" summary="Menu added">
       <option name="closed" value="true" />
@@ -247,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702910539443</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1702910591970</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1702910591970</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +288,7 @@
     <MESSAGE value="add class for gradequeries updated grade.java" />
     <MESSAGE value="can add grade to a student by name" />
     <MESSAGE value="can add grade by student name and course name now" />
-    <option name="LAST_COMMIT_MESSAGE" value="can add grade by student name and course name now" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
 </project>

@@ -4,7 +4,6 @@ import jakarta.persistence.EntityManager;
 import org.example.entities.Grade;
 import org.example.entities.LanguageCourse;
 import org.example.entities.Student;
-import org.example.entities.Teacher;
 
 import java.util.List;
 import java.util.Scanner;
@@ -26,39 +25,28 @@ public class GradeQueries {
         }
     }
 
-    private static int getId() {
-        int id = getChoice();
-        if (id == -1) {
-            System.out.println("Returning to menu");
-        }
-        return id;
-    }
-
     private static void addGradeForStudent() {
         scannerInputs result = getScannerInputs();
 
         inTransaction(entityManager -> {
-            String queryString = """
-                    SELECT lc FROM LanguageCourse lc
-                    WHERE lc.courseName = :courseName
-                    """;
-            var query = entityManager.createQuery(queryString, LanguageCourse.class);
-            query.setParameter("courseName", result.courseName());
-            List<LanguageCourse> courses = query.getResultList();
-
+            List<LanguageCourse> courses = findCoursesByName(entityManager, result);
             setGradeByName(entityManager, courses, result);
         });
     }
 
+    private static List<LanguageCourse> findCoursesByName(EntityManager entityManager, scannerInputs result) {
+        String queryString = """
+                SELECT lc FROM LanguageCourse lc
+                WHERE lc.courseName = :courseName
+                """;
+        var query = entityManager.createQuery(queryString, LanguageCourse.class);
+        query.setParameter("courseName", result.courseName());
+        return query.getResultList();
+    }
+
     private static void setGradeByName(EntityManager entityManager, List<LanguageCourse> courses, scannerInputs result) {
         if (!courses.isEmpty()) {
-            String studentQueryString = """
-                    SELECT s FROM Student s
-                    WHERE s.studentName = :studentName
-                    """;
-            var studentQuery = entityManager.createQuery(studentQueryString, Student.class);
-            studentQuery.setParameter("studentName", result.studentName());
-            List<Student> students = studentQuery.getResultList();
+            List<Student> students = findStudentsByName(entityManager, result);
 
             Grade grade = new Grade();
             grade.setGradeCourse(courses.getFirst());
@@ -67,6 +55,16 @@ public class GradeQueries {
             entityManager.persist(grade);
             System.out.println("Grade added");
         }
+    }
+
+    private static List<Student> findStudentsByName(EntityManager entityManager, scannerInputs result) {
+        String studentQueryString = """
+                SELECT s FROM Student s
+                WHERE s.studentName = :studentName
+                """;
+        var studentQuery = entityManager.createQuery(studentQueryString, Student.class);
+        studentQuery.setParameter("studentName", result.studentName());
+        return studentQuery.getResultList();
     }
 
     private static scannerInputs getScannerInputs() {
@@ -78,6 +76,7 @@ public class GradeQueries {
 
         System.out.println("Enter grade: ");
         String gradeValue = scanner.nextLine();
+
         return new scannerInputs(courseName, studentName, gradeValue);
     }
 

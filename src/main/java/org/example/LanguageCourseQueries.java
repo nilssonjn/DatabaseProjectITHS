@@ -74,6 +74,14 @@ public class LanguageCourseQueries {
                 System.out.println("Incorrect course ID, returning to menu");
                 return;
             }
+            if (!course.getCourseLeaders().isEmpty() || !course.getTeachers().isEmpty() ||!course.getStudents().isEmpty() ||!course.getExaminations().isEmpty()) {
+                System.out.println("There is still something connected to this course, delete or remove the connection before removing the course");
+                System.out.println("Course leaders: "+course.getCourseLeaders().size());
+                System.out.println("Teachers: "+course.getTeachers().size());
+                System.out.println("Students: "+course.getStudents().size());
+                System.out.println("Examinations: "+course.getExaminations().size());
+                return;
+            }
             entityManager.remove(course);
         });
     }

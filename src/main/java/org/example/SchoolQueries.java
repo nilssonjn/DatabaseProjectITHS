@@ -121,6 +121,10 @@ public class SchoolQueries {
             if (school == null) {
                 return;
             }
+            if (!school.getLanguageCourses().isEmpty()) {
+                System.out.println("Can not delete the School since it still has courses connected to it, delete courses first");
+                return;
+            }
             entityManager.remove(school);
         });
     }

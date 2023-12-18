@@ -15,7 +15,7 @@ public class CourseLeaderQueries {
     public static void statsLeaderQueries() {
         System.out.println("""
                     1. Show number of course leaders and their names
-                    2. Show number of course leaders at a school
+                    2. Show number of course leaders at each school
                 """);
 
         int choice = getChoice();

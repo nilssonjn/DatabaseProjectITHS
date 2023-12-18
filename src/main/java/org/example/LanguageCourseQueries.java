@@ -95,14 +95,22 @@ public class LanguageCourseQueries {
         inTransaction(entityManager -> {
             School school = entityManager.find(School.class,schoolId);
             LanguageCourse course = entityManager.find(LanguageCourse.class,id);
+
             if (course == null) {
                 System.out.println("Incorrect course ID, returning to menu");
                 return;
+            }
+            if (course.getCourseSchool() != null && schoolId != course.getCourseSchool().getId()) {
+                var oldSchool = entityManager.find(School.class,course.getCourseSchool().getId());
+                if (oldSchool != null)
+                    oldSchool.removeCourse(course);
             }
             course.setCourseName(name);
             course.setCourseStartDate(startDate);
             course.setCourseEndDate(endDate);
             course.setCourseSchool(school);
+            if (school != null)
+                school.addCourse(course);
             entityManager.persist(course);
         });
 

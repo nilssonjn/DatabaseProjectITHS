@@ -103,6 +103,11 @@ public class TeacherQueries {
                 String email = scanner.nextLine();
                 System.out.println("Enter new course Id");
                 int courseId = Integer.parseInt(scanner.nextLine());
+                if (teacher.getTeacherCourse() != null && courseId != teacher.getTeacherCourse().getId()) {
+                    var oldCourse = entityManager.find(LanguageCourse.class,teacher.getTeacherCourse().getId());
+                    if (oldCourse != null)
+                        oldCourse.removeTeacher(teacher);
+                }
 
                 LanguageCourse course = entityManager.find(LanguageCourse.class, courseId);
 

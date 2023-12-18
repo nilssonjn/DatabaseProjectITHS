@@ -47,6 +47,9 @@ public class School {
     public void addCourse(LanguageCourse course) {
         this.languageCourses.add(course);
     }
+    public void removeCourse(LanguageCourse course) {
+        this.languageCourses.remove(course);
+    }
     @Override
     public String toString() {
         return "School{" +

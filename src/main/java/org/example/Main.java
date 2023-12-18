@@ -49,7 +49,7 @@ public class Main {
                 1.Courses
                 2.Students
                 3.Teachers
-                4.TBD
+                4.Schools
                 5.TBD
                 6.TBD
                 \nAwaiting input
@@ -60,7 +60,7 @@ public class Main {
             case 1 -> LanguageCourseQueries.statsCourseQueries();
             case 2 -> StudentQueries.statsStudentQueries();
             case 3 -> TeacherQueries.statsTeacherQueries();
-            case 4 -> /*Todo: MenuOption4 for select*/{}
+            case 4 -> SchoolQueries.schoolStatsQueries();
             case 5 -> /*Todo: MenuOption5 for select*/{}
             case 6 -> /*Todo: MenuOption6 for select*/{}
         }
@@ -72,7 +72,7 @@ public class Main {
                 1.Courses
                 2.Students
                 3.Teachers
-                4.TBD
+                4.Schools
                 5.TBD
                 6.TBD
                 \nAwaiting input
@@ -83,7 +83,7 @@ public class Main {
             case 1 -> LanguageCourseQueries.selectCourseQueries();
             case 2 -> StudentQueries.showAllStudents();
             case 3 -> TeacherQueries.selectTeacherQueries();
-            case 4 -> /*Todo: MenuOption4 for select*/{}
+            case 4 -> SchoolQueries.selectSchoolQueries();
             case 5 -> /*Todo: MenuOption5 for select*/{}
             case 6 -> /*Todo: MenuOption6 for select*/{}
         }
@@ -94,7 +94,7 @@ public class Main {
                 1.Courses
                 2.Students
                 3.Teachers
-                4.TBD
+                4.Schools
                 5.TBD
                 6.TBD
                 \nAwaiting input
@@ -105,7 +105,7 @@ public class Main {
             case 1 -> LanguageCourseQueries.insertCourseQueries();
             case 2 -> StudentQueries.insertStudentQueries();
             case 3 -> TeacherQueries.insertTeacherQueries();
-            case 4 -> /*Todo: MenuOption4 for insert*/{}
+            case 4 -> SchoolQueries.insertSchoolQueries();
             case 5 -> /*Todo: MenuOption5 for insert*/{}
             case 6 -> /*Todo: MenuOption6 for insert*/{}
         }
@@ -117,7 +117,7 @@ public class Main {
                 1.Courses
                 2.Students
                 3.Teachers
-                4.TBD
+                4.Schools
                 5.TBD
                 6.TBD
                 \nAwaiting input
@@ -128,7 +128,7 @@ public class Main {
             case 1 -> LanguageCourseQueries.updateCourseQueries();
             case 2 -> StudentQueries.updateStudentQueries();
             case 3 -> TeacherQueries.updateTeacherQueries();
-            case 4 -> /*Todo: MenuOption4 for update*/{}
+            case 4 -> SchoolQueries.updateSchoolQueries();
             case 5 -> /*Todo: MenuOption5 for update*/{}
             case 6 -> /*Todo: MenuOption6 for update*/{}
         }
@@ -140,7 +140,7 @@ public class Main {
                 1.Courses
                 2.Students
                 3.Teachers
-                4.TBD
+                4.Schools
                 5.TBD
                 6.TBD
                 \nAwaiting input
@@ -151,7 +151,7 @@ public class Main {
             case 1 -> LanguageCourseQueries.deleteCourseQueries();
             case 2 -> StudentQueries.deleteStudentQueries();
             case 3 -> TeacherQueries.deleteTeacherQueries();
-            case 4 -> /*Todo: MenuOption4 for delete*/{}
+            case 4 -> SchoolQueries.deleteSchoolQueries();
             case 5 -> /*Todo: MenuOption5 for delete*/{}
             case 6 -> /*Todo: MenuOption6 for delete*/{}
         }

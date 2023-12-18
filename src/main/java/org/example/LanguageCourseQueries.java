@@ -127,6 +127,8 @@ public class LanguageCourseQueries {
             course.setCourseStartDate(startDate);
             course.setCourseEndDate(endDate);
             course.setCourseSchool(school);
+            if (school != null)
+                school.addCourse(course);
             entityManager.persist(course);
         });
 

@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="Fixed some crashes in StudentQueries">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TeacherQueries.java" afterDir="false" />
+    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="Add Teacher.java to project.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SchoolQueries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LanguageCourseQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LanguageCourseQueries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/School.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,9 @@
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -131,7 +135,8 @@
       <workItem from="1702539473284" duration="23148000" />
       <workItem from="1702631480018" duration="3352000" />
       <workItem from="1702807612401" duration="6617000" />
-      <workItem from="1702825150590" duration="1203000" />
+      <workItem from="1702825150590" duration="1426000" />
+      <workItem from="1702888667184" duration="3147000" />
     </task>
     <task id="LOCAL−00001" summary="Menu added">
       <option name="closed" value="true" />
@@ -189,7 +194,14 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1702814121720</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="Add Teacher.java to project.">
+      <option name="closed" value="true" />
+      <created>1702826513085</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1702826513085</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +216,7 @@
     <MESSAGE value="Fixed a couple of crashes when using incorrect input in LanguageCourseQueries.java" />
     <MESSAGE value="StudentQueries added&#10;&#10;Fixed some toString methods and changed what was printed in LanguageCourse" />
     <MESSAGE value="Fixed some crashes in StudentQueries" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed some crashes in StudentQueries" />
+    <MESSAGE value="Add Teacher.java to project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Teacher.java to project." />
   </component>
 </project>

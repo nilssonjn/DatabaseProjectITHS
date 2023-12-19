@@ -44,7 +44,7 @@ public class Grade {
         this.id = id;
     }
 
-    public String getGradeValue(String gradeValue) {
+    public String getGradeValue() {
         return this.gradeValue;
     }
 

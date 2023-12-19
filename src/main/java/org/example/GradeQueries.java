@@ -18,11 +18,30 @@ public class GradeQueries {
         System.out.println("""
                 Grade options:
                 1. Add grade for a student
+                2. Show grades for a student
                 """);
         int choice = getChoice();
         switch (choice) {
             case 1 -> addGradeForStudent();
+            case 2 -> showStudentGrades();
         }
+    }
+
+    private static void showStudentGrades() {
+        System.out.println("Enter student name: ");
+        String studentName = scanner.nextLine();
+        inTransaction(entityManager -> {
+            String queryString = """
+                    SELECT g FROM Grade g
+                    WHERE g.gradeStudent.studentName = :studentName
+                    """;
+            var query = entityManager.createQuery(queryString, Grade.class);
+            query.setParameter("studentName", studentName);
+            List<Grade> grades = query.getResultList();
+            System.out.println("Grades for " + studentName + ":");
+            grades.forEach(grade -> System.out.println("Course: " + grade.getGradeCourse().getCourseName() +
+                    " Grade: " + grade.getGradeValue()));
+        });
     }
 
     private static void addGradeForStudent() {

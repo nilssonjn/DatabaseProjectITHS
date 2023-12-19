@@ -3,7 +3,6 @@ package org.example;
 import jakarta.persistence.EntityManager;
 import org.example.entities.Grade;
 import org.example.entities.LanguageCourse;
-import org.example.entities.School;
 import org.example.entities.Student;
 
 import java.util.List;

@@ -3,6 +3,7 @@ package org.example;
 import jakarta.persistence.EntityManager;
 import org.example.entities.Grade;
 import org.example.entities.LanguageCourse;
+import org.example.entities.School;
 import org.example.entities.Student;
 
 import java.util.List;
@@ -19,12 +20,25 @@ public class GradeQueries {
                 Grade options:
                 1. Add grade for a student
                 2. Show grades for a student
+                3. Show all grades
                 """);
         int choice = getChoice();
         switch (choice) {
             case 1 -> addGradeForStudent();
             case 2 -> showStudentGrades();
+            case 3 -> showAllGrades();
         }
+    }
+
+    public static void showAllGrades() {
+        inTransaction(entityManager -> {
+            String queryString = """
+                    SELECT g FROM Grade g
+                    """;
+            var query = entityManager.createQuery(queryString, Grade.class);
+            List<Grade> grades = query.getResultList();
+            grades.forEach(System.out::println);
+        });
     }
 
     private static void showStudentGrades() {

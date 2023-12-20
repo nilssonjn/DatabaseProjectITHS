@@ -17,7 +17,7 @@ public class GradeQueries {
     public static void addGradeOptions() {
         System.out.println("""
                 Grade options:
-                1. Add grade for a students
+                1. Add grade for students
                 2. Show grades for a student
                 3. Show all grades
                 """);
@@ -111,16 +111,21 @@ public class GradeQueries {
     }
 
     private static scannerInputs getScannerInputs() {
-        System.out.println("Enter course name: ");
-        String courseName = scanner.nextLine();
+        try {
+            System.out.println("Enter course name: ");
+            String courseName = scanner.nextLine();
 
-        System.out.println("Enter amount of students to put grade for: ");
-        int nrOfStudents = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter amount of students to put grade for: ");
+            int nrOfStudents = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Enter grade: ");
-        String gradeValue = scanner.nextLine();
+            System.out.println("Enter grade: ");
+            String gradeValue = scanner.nextLine();
 
-        return new scannerInputs(courseName, "", gradeValue, nrOfStudents);
+            return new scannerInputs(courseName, "", gradeValue, nrOfStudents);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input for number of students, Please enter a valid number... Returning to inputs...");
+        }
+        return getScannerInputs();
     }
 
     private record scannerInputs(String courseName, String studentName, String gradeValue, int nrOfStudents) {

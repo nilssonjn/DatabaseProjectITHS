@@ -17,7 +17,7 @@ public class GradeQueries {
     public static void addGradeOptions() {
         System.out.println("""
                 Grade options:
-                1. Add grade for a student
+                1. Add grade for a students
                 2. Show grades for a student
                 3. Show all grades
                 """);
@@ -62,7 +62,11 @@ public class GradeQueries {
 
         inTransaction(entityManager -> {
             List<LanguageCourse> courses = findCoursesByName(entityManager, result);
-            setGradeByName(entityManager, courses, result);
+            if (!courses.isEmpty()) {
+                setGradeByName(entityManager, courses, result);
+            } else {
+                System.out.println("No course with that name found");
+            }
         });
     }
 
@@ -77,15 +81,22 @@ public class GradeQueries {
     }
 
     private static void setGradeByName(EntityManager entityManager, List<LanguageCourse> courses, scannerInputs result) {
-        if (!courses.isEmpty()) {
-            List<Student> students = findStudentsByName(entityManager, result);
+        for (int i = 0; i < result.nrOfStudents(); i++) {
+            System.out.println("Enter student name: " + (i + 1) + ": ");
+            String studentName = scanner.nextLine();
 
-            Grade grade = new Grade();
-            grade.setGradeCourse(courses.getFirst());
-            grade.setGradeStudent(students.getFirst());
-            grade.setGradeValue(result.gradeValue());
-            entityManager.persist(grade);
-            System.out.println("Grade added");
+            List<Student> students = findStudentsByName(entityManager, new scannerInputs("", studentName, "", 0));
+
+            if (!students.isEmpty()) {
+                Grade grade = new Grade();
+                grade.setGradeCourse(courses.getFirst());
+                grade.setGradeStudent(students.getFirst());
+                grade.setGradeValue(result.gradeValue());
+                entityManager.persist(grade);
+                System.out.println("Grade added for " + studentName);
+            } else {
+                System.out.println("No student with that name found, grade was not added for " + studentName);
+            }
         }
     }
 
@@ -103,15 +114,15 @@ public class GradeQueries {
         System.out.println("Enter course name: ");
         String courseName = scanner.nextLine();
 
-        System.out.println("Enter student name: ");
-        String studentName = scanner.nextLine();
+        System.out.println("Enter amount of students to put grade for: ");
+        int nrOfStudents = Integer.parseInt(scanner.nextLine());
 
         System.out.println("Enter grade: ");
         String gradeValue = scanner.nextLine();
 
-        return new scannerInputs(courseName, studentName, gradeValue);
+        return new scannerInputs(courseName, "", gradeValue, nrOfStudents);
     }
 
-    private record scannerInputs(String courseName, String studentName, String gradeValue) {
+    private record scannerInputs(String courseName, String studentName, String gradeValue, int nrOfStudents) {
     }
 }

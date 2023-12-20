@@ -82,20 +82,23 @@ public class GradeQueries {
 
     private static void setGradeByName(EntityManager entityManager, List<LanguageCourse> courses, scannerInputs result) {
         for (int i = 0; i < result.nrOfStudents(); i++) {
-            System.out.println("Enter student name: " + (i + 1) + ": ");
-            String studentName = scanner.nextLine();
+            try {
+                System.out.println("Enter student name: " + (i + 1) + ": ");
+                String studentName = scanner.nextLine();
 
-            List<Student> students = findStudentsByName(entityManager, new scannerInputs("", studentName, "", 0));
+                List<Student> students = findStudentsByName(entityManager, new scannerInputs("", studentName, "", 0));
 
-            if (!students.isEmpty()) {
-                Grade grade = new Grade();
-                grade.setGradeCourse(courses.getFirst());
-                grade.setGradeStudent(students.getFirst());
-                grade.setGradeValue(result.gradeValue());
-                entityManager.persist(grade);
-                System.out.println("Grade added for " + studentName);
-            } else {
-                System.out.println("No student with that name found, grade was not added for " + studentName);
+                if (!students.isEmpty()) {
+                    Grade grade = new Grade();
+                    grade.setGradeCourse(courses.getFirst());
+                    grade.setGradeStudent(students.getFirst());
+                    grade.setGradeValue(result.gradeValue());
+                    entityManager.persist(grade);
+                    System.out.println("Grade added for " + studentName);
+
+                } else System.out.println("No student with that name found, grade was not added for " + studentName);
+            } catch (Exception e) {
+                System.out.println("An error occurred during database operation.");
             }
         }
     }

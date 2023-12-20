@@ -21,10 +21,6 @@ public class Grade {
     private Student gradeStudent;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "gradeTeacherId")
-    private Teacher gradeTeacher;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "gradeCourseId")
     private LanguageCourse gradeCourse;
 
@@ -66,7 +62,6 @@ public class Grade {
                 "id=" + id +
                 ", gradeValue='" + gradeValue + '\'' +
                 ", gradeStudent=" + gradeStudent +
-                ", gradeTeacher=" + gradeTeacher +
                 '}';
     }
 

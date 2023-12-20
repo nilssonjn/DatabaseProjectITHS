@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="add showstudentgrades" />
+    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="add showallgrades">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,6 +137,7 @@
       <workItem from="1702825150590" duration="1426000" />
       <workItem from="1702888667184" duration="8915000" />
       <workItem from="1702904710031" duration="6348000" />
+      <workItem from="1703062855569" duration="322000" />
     </task>
     <task id="LOCAL−00001" summary="Menu added">
       <option name="closed" value="true" />

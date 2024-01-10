@@ -1,1 +1,1 @@
-Database course project - Emil, Lucia, Valentina, Adam, Jens, Alexander
+Database course project - Emil, Lucia, Valentina, Adam, Jens

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="error handling getScannerInputs" />
+    <list default="true" id="3fbd5bbe-5556-4ef6-aa2b-2eacb49218a1" name="Changes" comment="error handling setGradeByName">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +139,16 @@
       <workItem from="1702888667184" duration="8915000" />
       <workItem from="1702904710031" duration="6348000" />
       <workItem from="1703062855569" duration="1160000" />
-      <workItem from="1703064312970" duration="4506000" />
+      <workItem from="1703064312970" duration="6681000" />
+      <workItem from="1704708656490" duration="48000" />
+      <workItem from="1704708736046" duration="744000" />
+      <workItem from="1704709801650" duration="76000" />
+      <workItem from="1704737676543" duration="20000" />
+      <workItem from="1704738432958" duration="8000" />
+      <workItem from="1704738877178" duration="32000" />
+      <workItem from="1704876224944" duration="99000" />
+      <workItem from="1704876330935" duration="17000" />
+      <workItem from="1704876370787" duration="333000" />
     </task>
     <task id="LOCAL−00001" summary="Menu added">
       <option name="closed" value="true" />
@@ -287,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703070215654</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="error handling setGradeByName">
+      <option name="closed" value="true" />
+      <created>1703070618982</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1703070618982</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +345,7 @@
     <MESSAGE value="update Grade" />
     <MESSAGE value="update addGradeForStudent and setGradeByName to be able to bulk add students" />
     <MESSAGE value="error handling getScannerInputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="error handling getScannerInputs" />
+    <MESSAGE value="error handling setGradeByName" />
+    <option name="LAST_COMMIT_MESSAGE" value="error handling setGradeByName" />
   </component>
 </project>
